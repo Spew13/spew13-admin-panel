@@ -192,11 +192,26 @@ loginBtn.addEventListener('click',checkLogin);
   <div id="adminContent">
     <!-- Announcements Tab -->
     <div id="tab-announcements">
-      <h3>Send Announcement</h3>
-      <input type="text" id="announcementInput" placeholder="Type your message">
-      <br>
-      <button onclick="sendAnnouncement()">Send</button>
-      <p id="adminMessage"></p>
+      <div style="
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+">
+  <iframe 
+    src="https://spew13.github.io/spew13-admin-panel-test/" 
+    style="
+      width: 95%;
+      height: 400px;
+      border: 2px solid limegreen;
+      border-radius: 12px;
+      box-shadow: 0 0 18px limegreen, 0 0 5px #0f0 inset;
+      background: rgba(0,0,0,0.8);
+      color: limegreen;
+    " 
+    title="Spew13 Admin Announcements">
+  </iframe>
+</div>
       <div id="announcementPreview"></div>
     </div>
 
@@ -306,4 +321,3 @@ function toggleFeature(){ alert("Feature toggled!"); }
 </script>
 </body>
 </html>
-
