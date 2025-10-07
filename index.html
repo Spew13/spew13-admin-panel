@@ -27,6 +27,23 @@
     justify-content:center;
     border-bottom:1px solid limegreen;
   }
+      /* Container for iframe */
+.iframe-wrapper {
+  width: 90%;          /* Adjust width as needed */
+  height: 80vh;        /* Height relative to viewport */
+  margin: 2rem auto;   /* Center container vertically */
+  border-radius: 12px; /* Rounded corners */
+  overflow: hidden;    /* Hide scrollbars of container */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5); /* Subtle shadow */
+}
+
+/* Iframe itself */
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;        /* Remove default iframe border */
+}
+
   .tabBtn {
     background:black;
     border:none;
@@ -186,7 +203,7 @@ loginBtn.addEventListener('click',checkLogin);
   <div id="adminTabs">
     <button class="tabBtn active" onclick="showTab('announcements')">Announcements</button>
     <button class="tabBtn" onclick="showTab('games')">Games</button>
-    <button class="tabBtn" onclick="showTab('users')">Users</button>
+    <button class="tabBtn" onclick="showTab('users')">Early access download!</button>
     <button class="tabBtn" onclick="showTab('settings')">Settings</button>
   </div>
   <div id="adminContent">
@@ -218,20 +235,24 @@ loginBtn.addEventListener('click',checkLogin);
     <!-- Games Tab -->
     <div id="tab-games" style="display:none;">
       <h3>Game Controls</h3>
-      <button onclick="loadGame('https://arstudios750.github.io/spew13gamble/')">Load Gamble Game</button>
-      <button onclick="disableGame()">Disable Game</button>
+      <button onclick="loadGame('https://spew13.github.io/')">Load Spew13...</button>
+      <button onclick="disableGame()">Disable...</button>
     </div>
 
     <!-- Users Tab -->
     <div id="tab-users" style="display:none;">
-      <h3>Connected Users</h3>
-      <p>Feature coming soon!</p>
+      <h3>Early Acccess Viewer...</h3>
+      <p>Check out the new Halloween Update (Coming by the 15th this month)! No sharing this update! (To others at least.)</p>
+          <!-- Iframe container -->
+<div class="iframe-wrapper">
+  <iframe src="https://spew13.github.io/spew13-early-access-download/"></iframe>
+</div>
     </div>
-
+        
     <!-- Settings Tab -->
     <div id="tab-settings" style="display:none;">
       <h3>Site Settings</h3>
-      <button onclick="toggleFeature()">Toggle Example Feature</button>
+      <button onclick="toggleFeature()">Coming soon to an admin-abuse near you.</button>
     </div>
   </div>
 </div>
