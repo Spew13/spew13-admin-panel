@@ -148,52 +148,6 @@
 </style>
 
 <script>
-// Replace this:
-// const ALLOWED_EMAILS = ['carmstrong31@ecsd.us','eswerdan31@ecsd.us','ceverett31@ecsd.us','osullivan31@ecsd.us'];
-// const GENERATED_PASSWORD = 'N8r$yL2q#vT9pX7s';
-
-const USER_CREDENTIALS = {
-  'carmstrong31@ecsd.us': 'N8r$yL2q#vT9pX7s',
-  'eswerdan31@ecsd.us':   'N8r$yL2q#vT9pX7s',
-  'ceverett31@ecsd.us':   'N8r$yL2q#vT9pX7s',
-  'osullivan31@ecsd.us':  'osullivanPass123'
-};
-
-const loginOverlay = document.getElementById('loginOverlay');
-const emailInput = document.getElementById('emailInput');
-const passwordInput = document.getElementById('passwordInput');
-const loginBtn = document.getElementById('loginBtn');
-const loginMessage = document.getElementById('loginMessage');
-
-function checkLogin(){
-  const email = (emailInput.value||'').trim().toLowerCase();
-  const pass = (passwordInput.value||'').trim();
-
-  loginMessage.classList.remove('shake');
-
-  if(!email || !pass){
-    loginMessage.textContent='Enter email and password.';
-    return;
-  }
-
-  if(!USER_CREDENTIALS[email] || pass !== USER_CREDENTIALS[email]){
-    loginMessage.textContent='Access Denied!';
-    loginMessage.classList.add('shake');
-    return;
-  }
-
-  // SUCCESS
-  loginOverlay.style.transition='all 0.8s ease';
-  loginOverlay.style.opacity='0';
-  loginOverlay.style.transform='scale(0.8)';
-  setTimeout(()=> loginOverlay.style.display='none',800);
-}
-
-loginBtn.addEventListener('click',checkLogin);
-[emailInput,passwordInput].forEach(el=>{
-  el.addEventListener('keydown',e=>{ if(e.key==='Enter') checkLogin(); });
-});
-
        /* Shortcut Login (ctrl+alt+s+space-bar)*/  
 document.addEventListener('keydown', function(event) {
     // Check for Ctrl + Alt + S + Space
