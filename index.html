@@ -148,24 +148,7 @@
 </style>
 
 <script>
-       /* Shortcut Login (ctrl+alt+s+space-bar)*/  
-document.addEventListener('keydown', function(event) {
-    // Check for Ctrl + Alt + S + Space
-    if (event.ctrlKey && event.altKey && event.key.toLowerCase() === 's') {
-        document.addEventListener('keydown', function spaceListener(e) {
-            if (e.code === 'Space') {
-                // AUTOMATIC LOGIN
-                loginOverlay.style.transition = 'all 0.8s ease';
-                loginOverlay.style.opacity = '0';
-                loginOverlay.style.transform = 'scale(0.8)';
-                setTimeout(() => loginOverlay.style.display = 'none', 800);
-
-                // Remove this listener to prevent multiple triggers
-                document.removeEventListener('keydown', spaceListener);
-            }
-        });
-    }
-});
+      
 </script>
 
 
